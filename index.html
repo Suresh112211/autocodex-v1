@@ -3,53 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AutoCodeX - Web App Builder</title>
+  <title>AutoCodeX - 18 Bundles</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="header">
-    <img src="assets/logo.png" alt="AutoCodeX Logo" class="logo">
-    <h1>AutoCodeX – Build Your Web App</h1>
+    <img src="assets/logo.png" class="logo" alt="AutoCodeX Logo" />
+    <h1>AutoCodeX – AI Powered App Builder</h1>
   </header>
-
   <main class="container">
-    <input type="text" placeholder="Enter Your Project Name" id="projectName" />
+    <input type="text" id="projectName" placeholder="Enter Project Name" />
     <div class="bundle-grid">
-      <h3>Enter Your Code in the 18 Bundles:</h3>
-      <!-- 18 textarea bundles -->
-      <textarea placeholder="Bundle 1 - HTML"></textarea>
-      <textarea placeholder="Bundle 2 - CSS"></textarea>
-      <textarea placeholder="Bundle 3 - JS"></textarea>
-      <textarea placeholder="Bundle 4 - HTML"></textarea>
-      <textarea placeholder="Bundle 5 - CSS"></textarea>
-      <textarea placeholder="Bundle 6 - JS"></textarea>
-      <textarea placeholder="Bundle 7 - HTML"></textarea>
-      <textarea placeholder="Bundle 8 - CSS"></textarea>
-      <textarea placeholder="Bundle 9 - JS"></textarea>
-      <textarea placeholder="Bundle 10 - HTML"></textarea>
-      <textarea placeholder="Bundle 11 - CSS"></textarea>
-      <textarea placeholder="Bundle 12 - JS"></textarea>
-      <textarea placeholder="Bundle 13 - HTML"></textarea>
-      <textarea placeholder="Bundle 14 - CSS"></textarea>
-      <textarea placeholder="Bundle 15 - JS"></textarea>
-      <textarea placeholder="Bundle 16 - HTML"></textarea>
-      <textarea placeholder="Bundle 17 - CSS"></textarea>
-      <textarea placeholder="Bundle 18 - JS"></textarea>
+      <textarea placeholder="Bundle 1: HTML"></textarea>
+      <textarea placeholder="Bundle 2: CSS / SCSS"></textarea>
+      <textarea placeholder="Bundle 3: XML"></textarea>
+      <textarea placeholder="Bundle 4: Java"></textarea>
+      <textarea placeholder="Bundle 5: Kotlin"></textarea>
+      <textarea placeholder="Bundle 6: Dart"></textarea>
+      <textarea placeholder="Bundle 7: JavaScript"></textarea>
+      <textarea placeholder="Bundle 8: TypeScript"></textarea>
+      <textarea placeholder="Bundle 9: C++"></textarea>
+      <textarea placeholder="Bundle 10: Python"></textarea>
+      <textarea placeholder="Bundle 11: PHP"></textarea>
+      <textarea placeholder="Bundle 12: Ruby"></textarea>
+      <textarea placeholder="Bundle 13: C#"></textarea>
+      <textarea placeholder="Bundle 14: Go"></textarea>
+      <textarea placeholder="Bundle 15: SQL"></textarea>
+      <textarea placeholder="Bundle 16: NoSQL / JSON"></textarea>
+      <textarea placeholder="Bundle 17: Backend Logic (API, JWT, Regex)"></textarea>
+      <textarea placeholder="Bundle 18: Build Config (Gradle, Manifest)"></textarea>
     </div>
-
     <div class="buttons">
       <button onclick="preview()">🔍 Live Preview</button>
       <button onclick="submitApp()">🚀 Create App</button>
       <button onclick="resetForm()">♻️ Reset</button>
       <button onclick="shareApp()">📤 Share</button>
     </div>
-
     <iframe id="livePreview" width="100%" height="400"></iframe>
   </main>
-
   <footer class="footer">© 2025 AutoCodeX</footer>
-
-  <!-- ✅ यह लाइन सबसे नीचे body के अंदर -->
   <script src="script.js"></script>
 </body>
 </html>
