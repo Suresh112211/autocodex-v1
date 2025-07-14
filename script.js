@@ -4,9 +4,9 @@ function preview() {
 
   areas.forEach((area, i) => {
     const code = area.value;
-    if (i % 3 === 0) html += code + "\n";       // HTML
-    else if (i % 3 === 1) css += code + "\n";   // CSS
-    else js += code + "\n";                     // JS
+    if (i % 3 === 0) html += code + "\n";
+    else if (i % 3 === 1) css += code + "\n";
+    else js += code + "\n";
   });
 
   const output = `
@@ -23,6 +23,23 @@ function preview() {
     </html>
   `;
 
-  const iframe = document.getElementById("livePreview");
-  iframe.srcdoc = output;
+  document.getElementById("livePreview").srcdoc = output;
+}
+
+function submitApp() {
+  alert("✅ Your app has been created (Preview only). Export feature coming soon!");
+}
+
+function resetForm() {
+  document.querySelectorAll("textarea").forEach(area => area.value = "");
+  document.getElementById("projectName").value = "";
+  document.getElementById("livePreview").srcdoc = "";
+}
+
+function shareApp() {
+  const projectName = document.getElementById("projectName").value || "My AutoCodeX App";
+  const shareURL = "https://autocodex-user.vercel.app"; // Replace with your domain
+  const fullText = encodeURIComponent(`🚀 Check out the app I built using AutoCodeX: ${projectName}\n${shareURL}`);
+  const whatsappURL = `https://wa.me/?text=${fullText}`;
+  window.open(whatsappURL, "_blank");
 }
