@@ -27,3 +27,11 @@ function resetForm() {
   const areas = document.querySelectorAll("textarea");
   areas.forEach(area => area.value = "");
 }
+function shareApp() {
+  const projectName = document.getElementById("projectName").value || "My AutoCodeX App";
+  const previewText = encodeURIComponent(🚀 Check out the app I built using AutoCodeX: ${projectName});
+  const shareURL = "https://autocodex-user.vercel.app"; // Change to actual app preview URL
+  
+  const whatsappURL = https://wa.me/?text=${previewText}%0A${shareURL};
+  window.open(whatsappURL, "_blank");
+}
