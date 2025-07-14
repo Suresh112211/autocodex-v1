@@ -19,3 +19,11 @@ function preview() {
   const iframe = document.getElementById("livePreview");
   iframe.srcdoc = output;
 }
+function submitApp() {
+  alert("✅ Your app has been created successfully (preview-only mode). Export coming soon!");
+}
+
+function resetForm() {
+  const areas = document.querySelectorAll("textarea");
+  areas.forEach(area => area.value = "");
+}
