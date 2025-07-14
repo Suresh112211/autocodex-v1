@@ -4,108 +4,47 @@ function preview() {
 
   areas.forEach((area, i) => {
     const code = area.value;
-    if (i % 3 === 0) html += code + "\\n";
-    else if (i % 3 === 1) css += code + "\\n";
-    else js += code + "\\n";
+    if (i % 3 === 0) {
+      html += code + "\\n";
+    } else if (i % 3 === 1) {
+      css += code + "\\n";
+    } else {
+      js += code + "\\n";
+    }
   });
 
   const output = `
-    <html>
-    <head><style>${css}</style></head>
-    <body>${html}<script>${js}<\/script></body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <style>${css}</style>
+    </head>
+    <body>
+      ${html}
+      <script>${js}<\/script>
+    </body>
     </html>
   `;
 
   const iframe = document.getElementById("livePreview");
   iframe.srcdoc = output;
 }
+
 function submitApp() {
-  alert("✅ Your app has been created successfully (preview-only mode). Export coming soon!");
+  alert("✅ Your app has been created (Preview Only). Download & deploy feature coming soon!");
 }
 
 function resetForm() {
-  const areas = document.querySelectorAll("textarea");
-  areas.forEach(area => area.value = "");
+  document.querySelectorAll("textarea").forEach(area => area.value = "");
+  document.getElementById("projectName").value = "";
+  document.getElementById("livePreview").srcdoc = "";
 }
+
 function shareApp() {
   const projectName = document.getElementById("projectName").value || "My AutoCodeX App";
-  const previewText = encodeURIComponent(🚀 Check out the app I built using AutoCodeX: ${projectName});
-  const shareURL = "https://autocodex-user.vercel.app"; // Change to actual app preview URL
-  
-  const whatsappURL = https://wa.me/?text=${previewText}%0A${shareURL};
+  const shareURL = "https://autocodex-user.vercel.app"; // Replace with your domain
+  const fullText = encodeURIComponent(`🚀 Check out my app built with AutoCodeX: ${projectName}\n${shareURL}`);
+  const whatsappURL = `https://wa.me/?text=${fullText}`;
   window.open(whatsappURL, "_blank");
-}
-function preview() {
-  const areas = document.querySelectorAll("textarea");
-  let html = "", css = "", js = "";
-
-  areas.forEach((area, i) => {
-    const code = area.value;
-    if (i % 3 === 0) html += code + "\\n";
-    else if (i % 3 === 1) css += code + "\\n";
-    else js += code + "\\n";
-  });
-
-  const output = `
-    <html>
-    <head><style>${css}</style></head>
-    <body>${html}<script>${js}<\/script></body>
-    </html>
-  `;
-
-  document.getElementById("livePreview").srcdoc = output;
-}
-
-function submitApp() {
-  alert("✅ Your app has been created! (Feature in development)");
-}
-
-function resetForm() {
-  const areas = document.querySelectorAll("textarea");
-  areas.forEach(area => area.value = "");
-}
-
-function shareApp() {
-  const projectName = document.getElementById("projectName").value || "My AutoCodeX App";
-  const encodedText = encodeURIComponent(🚀 Check out the app I built using AutoCodeX: ${projectName});
-  const shareURL = "https://autocodex-user.vercel.app";
-  const fullShareURL = https://wa.me/?text=${encodedText}%0A${shareURL};
-  window.open(fullShareURL, "_blank");
-}
-function preview() {
-  const areas = document.querySelectorAll("textarea");
-  let html = "", css = "", js = "";
-
-  areas.forEach((area, i) => {
-    const code = area.value;
-    if (i % 3 === 0) html += code + "\\n";
-    else if (i % 3 === 1) css += code + "\\n";
-    else js += code + "\\n";
-  });
-
-  const output = `
-    <html>
-    <head><style>${css}</style></head>
-    <body>${html}<script>${js}<\/script></body>
-    </html>
-  `;
-
-  document.getElementById("livePreview").srcdoc = output;
-}
-
-function submitApp() {
-  alert("✅ Your app has been created! (Feature in development)");
-}
-
-function resetForm() {
-  const areas = document.querySelectorAll("textarea");
-  areas.forEach(area => area.value = "");
-}
-
-function shareApp() {
-  const projectName = document.getElementById("projectName").value || "My AutoCodeX App";
-  const encodedText = encodeURIComponent(🚀 Check out the app I built using AutoCodeX: ${projectName});
-  const shareURL = "https://autocodex-user.vercel.app";
-  const fullShareURL = https://wa.me/?text=${encodedText}%0A${shareURL};
-  window.open(fullShareURL, "_blank");
 }
