@@ -1,37 +1,55 @@
-function preview() {
-  const areas = document.querySelectorAll("textarea");
-  let html = "", css = "", js = "";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoCodeX - Web App Builder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <img src="assets/logo.png" alt="AutoCodeX Logo" class="logo">
+    <h1>AutoCodeX – Build Your Web App</h1>
+  </header>
 
-  areas.forEach((area, i) => {
-    const code = area.value;
-    if (i % 3 === 0) html += code + "\n";       // HTML
-    else if (i % 3 === 1) css += code + "\n";   // CSS
-    else js += code + "\n";                     // JS
-  });
+  <main class="container">
+    <input type="text" placeholder="Enter Your Project Name" id="projectName" />
+    <div class="bundle-grid">
+      <h3>Enter Your Code in the 18 Bundles:</h3>
+      <!-- Generate 18 bundles -->
+      <!-- Every 3 = HTML, CSS, JS -->
+      <!-- Bundle 1 = HTML, 2 = CSS, 3 = JS and repeat -->
+      <textarea placeholder="Bundle 1 - HTML"></textarea>
+      <textarea placeholder="Bundle 2 - CSS"></textarea>
+      <textarea placeholder="Bundle 3 - JS"></textarea>
+      <textarea placeholder="Bundle 4 - HTML"></textarea>
+      <textarea placeholder="Bundle 5 - CSS"></textarea>
+      <textarea placeholder="Bundle 6 - JS"></textarea>
+      <textarea placeholder="Bundle 7 - HTML"></textarea>
+      <textarea placeholder="Bundle 8 - CSS"></textarea>
+      <textarea placeholder="Bundle 9 - JS"></textarea>
+      <textarea placeholder="Bundle 10 - HTML"></textarea>
+      <textarea placeholder="Bundle 11 - CSS"></textarea>
+      <textarea placeholder="Bundle 12 - JS"></textarea>
+      <textarea placeholder="Bundle 13 - HTML"></textarea>
+      <textarea placeholder="Bundle 14 - CSS"></textarea>
+      <textarea placeholder="Bundle 15 - JS"></textarea>
+      <textarea placeholder="Bundle 16 - HTML"></textarea>
+      <textarea placeholder="Bundle 17 - CSS"></textarea>
+      <textarea placeholder="Bundle 18 - JS"></textarea>
+    </div>
 
-  const output = `
-    <html>
-    <head><style>${css}</style></head>
-    <body>${html}<script>${js}<\/script></body>
-    </html>
-  `;
+    <div class="buttons">
+      <button onclick="preview()">🔍 Live Preview</button>
+      <button onclick="submitApp()">🚀 Create App</button>
+      <button onclick="resetForm()">♻️ Reset</button>
+      <button onclick="shareApp()">📤 Share</button>
+    </div>
 
-  document.getElementById("livePreview").srcdoc = output;
-}
+    <iframe id="livePreview" width="100%" height="400"></iframe>
+  </main>
 
-function submitApp() {
-  alert("✅ Your app has been created! (Feature in development)");
-}
-
-function resetForm() {
-  const areas = document.querySelectorAll("textarea");
-  areas.forEach(area => area.value = "");
-}
-
-function shareApp() {
-  const projectName = document.getElementById("projectName").value || "My AutoCodeX App";
-  const encodedText = encodeURIComponent("🚀 Check out the app I built using AutoCodeX: " + projectName);
-  const shareURL = "https://autocodex-user.vercel.app";  // Or your final app URL
-  const finalURL = `https://wa.me/?text=${encodedText}%0A${shareURL}`;
-  window.open(finalURL, "_blank");
-}
+  <footer class="footer">© 2025 AutoCodeX</footer>
+  <script src="script.js"></script>
+</body>
+</html>
