@@ -11,23 +11,12 @@ function preview() {
 
   const output = `
     <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <style>${css}</style>
-    </head>
-    <body>
-      ${html}
-      <script>${js}<\/script>
-    </body>
+    <html>
+    <head><style>${css}</style></head>
+    <body>${html}<script>${js}<\/script></body>
     </html>
   `;
-
   document.getElementById("livePreview").srcdoc = output;
-}
-
-function submitApp() {
-  alert("✅ Your app has been created (Preview only)");
 }
 
 function resetForm() {
@@ -36,9 +25,13 @@ function resetForm() {
   document.getElementById("livePreview").srcdoc = "";
 }
 
+function submitApp() {
+  alert("✅ App created (preview only).");
+}
+
 function shareApp() {
   const name = document.getElementById("projectName").value || "My AutoCodeX App";
   const link = "https://autocodex-user.vercel.app";
-  const full = encodeURIComponent(`🚀 Check out my app: ${name}\\n${link}`);
+  const full = encodeURIComponent(`🚀 Check out my app: ${name}\n${link}`);
   window.open(`https://wa.me/?text=${full}`, "_blank");
 }
