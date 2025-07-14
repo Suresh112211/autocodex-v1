@@ -2,30 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AutoCodeX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoCodeX - Build Your App</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="header">
-    <h1 class="logo">AutoCodeX</h1>
+    <img src="assets/logo.png" alt="AutoCodeX Logo" class="logo">
+    <h1>AutoCodeX – Build Your Web App (User Version)</h1>
   </header>
 
   <main class="container">
-    <h2>Create Project</h2>
-    <input type="text" placeholder="Enter Project Name" id="projectName" />
-    <button onclick="createProject()">Create</button>
-    <div id="bundleSection">
-      <textarea placeholder="Paste HTML code here"></textarea>
-      <textarea placeholder="Paste CSS code here"></textarea>
-      <textarea placeholder="Paste JS code here"></textarea>
+    <input type="text" placeholder="Enter Your Project Name" id="projectName" />
+    <div class="bundle-grid">
+      <h3>Enter Your Code in the 18 Bundles:</h3>
+      <!-- 18 code bundle boxes -->
+      <!-- Grouped HTML, CSS, JS per set -->
+      <!-- Total 18 (6 sets of 3) -->
+      <textarea placeholder="Bundle 1 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 2 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 3 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 4 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 5 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 6 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 7 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 8 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 9 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 10 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 11 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 12 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 13 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 14 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 15 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 16 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 17 - HTML/CSS/JS"></textarea>
+      <textarea placeholder="Bundle 18 - HTML/CSS/JS"></textarea>
     </div>
-    <button onclick="preview()">Preview</button>
-    <iframe id="livePreview" width="100%" height="300"></iframe>
+    <button onclick="preview()">Live Preview</button>
+    <iframe id="livePreview" width="100%" height="400"></iframe>
   </main>
 
   <footer class="footer">© 2025 AutoCodeX</footer>
-
   <script src="script.js"></script>
 </body>
 </html>
