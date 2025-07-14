@@ -1,19 +1,21 @@
-function createProject() {
-  const name = document.getElementById('projectName').value;
-  alert(`Project "${name}" created!`);
-}
-
 function preview() {
-  const html = document.querySelectorAll('textarea')[0].value;
-  const css = document.querySelectorAll('textarea')[1].value;
-  const js = document.querySelectorAll('textarea')[2].value;
+  const areas = document.querySelectorAll("textarea");
+  let html = "", css = "", js = "";
 
-  const output = \`
+  areas.forEach((area, i) => {
+    const code = area.value;
+    if (i % 3 === 0) html += code + "\\n";
+    else if (i % 3 === 1) css += code + "\\n";
+    else js += code + "\\n";
+  });
+
+  const output = `
     <html>
-    <head><style>\${css}</style></head>
-    <body>\${html}<script>\${js}<\/script></body>
+    <head><style>${css}</style></head>
+    <body>${html}<script>${js}<\/script></body>
     </html>
-  \`;
-  const iframe = document.getElementById('livePreview');
+  `;
+
+  const iframe = document.getElementById("livePreview");
   iframe.srcdoc = output;
 }
