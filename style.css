@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: #eef2f5;
 }
 .header {
   background-color: #007acc;
@@ -11,18 +11,31 @@ body {
   text-align: center;
 }
 .logo {
-  font-size: 24px;
+  height: 40px;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 .container {
   padding: 20px;
 }
 textarea {
-  display: block;
   width: 100%;
-  height: 100px;
+  height: 80px;
   margin-bottom: 10px;
 }
+.bundle-grid {
+  margin-top: 20px;
+}
+button {
+  background-color: #2b8a3e;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
 iframe {
+  margin-top: 20px;
   border: 1px solid #ccc;
 }
 .footer {
@@ -30,7 +43,4 @@ iframe {
   color: white;
   text-align: center;
   padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
