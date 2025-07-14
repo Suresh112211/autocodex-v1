@@ -27,7 +27,7 @@ function preview() {
 }
 
 function submitApp() {
-  alert("✅ Your app has been created (Preview only). Export feature coming soon!");
+  alert("✅ Your app has been created (Preview only)");
 }
 
 function resetForm() {
@@ -37,9 +37,8 @@ function resetForm() {
 }
 
 function shareApp() {
-  const projectName = document.getElementById("projectName").value || "My AutoCodeX App";
-  const shareURL = "https://autocodex-user.vercel.app"; // Replace with your domain
-  const fullText = encodeURIComponent(`🚀 Check out the app I built using AutoCodeX: ${projectName}\n${shareURL}`);
-  const whatsappURL = `https://wa.me/?text=${fullText}`;
-  window.open(whatsappURL, "_blank");
+  const name = document.getElementById("projectName").value || "My AutoCodeX App";
+  const link = "https://autocodex-user.vercel.app";
+  const full = encodeURIComponent(`🚀 Check out my app: ${name}\\n${link}`);
+  window.open(`https://wa.me/?text=${full}`, "_blank");
 }
