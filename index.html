@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoCodeX</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo">AutoCodeX</h1>
+  </header>
+
+  <main class="container">
+    <h2>Create Project</h2>
+    <input type="text" placeholder="Enter Project Name" id="projectName" />
+    <button onclick="createProject()">Create</button>
+    <div id="bundleSection">
+      <textarea placeholder="Paste HTML code here"></textarea>
+      <textarea placeholder="Paste CSS code here"></textarea>
+      <textarea placeholder="Paste JS code here"></textarea>
+    </div>
+    <button onclick="preview()">Preview</button>
+    <iframe id="livePreview" width="100%" height="300"></iframe>
+  </main>
+
+  <footer class="footer">© 2025 AutoCodeX</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
