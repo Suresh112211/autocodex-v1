@@ -2,46 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AutoCodeX - 18 Bundles</title>
+  <title>AutoCodeX - Prompt to App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
+  <script type="module" src="script.js" defer></script>
 </head>
 <body>
-  <header class="header">
-    <img src="assets/logo.png" class="logo" alt="AutoCodeX Logo" />
-    <h1>AutoCodeX – AI Powered App Builder</h1>
-  </header>
-  <main class="container">
-    <input type="text" id="projectName" placeholder="Enter Project Name" />
-    <div class="bundle-grid">
-      <textarea placeholder="Bundle 1: HTML"></textarea>
-      <textarea placeholder="Bundle 2: CSS / SCSS"></textarea>
-      <textarea placeholder="Bundle 3: XML"></textarea>
-      <textarea placeholder="Bundle 4: Java"></textarea>
-      <textarea placeholder="Bundle 5: Kotlin"></textarea>
-      <textarea placeholder="Bundle 6: Dart"></textarea>
-      <textarea placeholder="Bundle 7: JavaScript"></textarea>
-      <textarea placeholder="Bundle 8: TypeScript"></textarea>
-      <textarea placeholder="Bundle 9: C++"></textarea>
-      <textarea placeholder="Bundle 10: Python"></textarea>
-      <textarea placeholder="Bundle 11: PHP"></textarea>
-      <textarea placeholder="Bundle 12: Ruby"></textarea>
-      <textarea placeholder="Bundle 13: C#"></textarea>
-      <textarea placeholder="Bundle 14: Go"></textarea>
-      <textarea placeholder="Bundle 15: SQL"></textarea>
-      <textarea placeholder="Bundle 16: NoSQL / JSON"></textarea>
-      <textarea placeholder="Bundle 17: Backend Logic (API, JWT, Regex)"></textarea>
-      <textarea placeholder="Bundle 18: Build Config (Gradle, Manifest)"></textarea>
+  <div class="container">
+    <h1>🚀 AutoCodeX - AI Powered App Builder</h1>
+
+    <!-- Auth -->
+    <div id="auth">
+      <input id="email" type="email" placeholder="Email" />
+      <input id="password" type="password" placeholder="Password" />
+      <button onclick="signUp()">🔐 Sign Up</button>
+      <button onclick="login()">➡️ Login</button>
     </div>
-    <div class="buttons">
-      <button onclick="preview()">🔍 Live Preview</button>
-      <button onclick="submitApp()">🚀 Create App</button>
-      <button onclick="resetForm()">♻️ Reset</button>
-      <button onclick="shareApp()">📤 Share</button>
+
+    <!-- AI Prompt -->
+    <div id="ai-prompt" style="display:none;">
+      <h2>🧠 Prompt to App (ChatGPT)</h2>
+      <input id="prompt" type="text" placeholder="Describe your app idea..." />
+      <button onclick="generateCode()">⚡ Generate Code with AI</button>
     </div>
-    <iframe id="livePreview" width="100%" height="400"></iframe>
-  </main>
-  <footer class="footer">© 2025 AutoCodeX</footer>
-  <script src="script.js"></script>
+
+    <!-- Project -->
+    <div id="project-section" style="display:none;">
+      <h2>🧱 Build Your Project</h2>
+      <input id="title" type="text" placeholder="Project Title" />
+      <textarea id="bundle" placeholder="Paste your 18-bundle code (JSON)..."></textarea>
+      <button onclick="save()">💾 Save Project</button>
+      <button onclick="load()">📂 Load My Projects</button>
+      <h3>📊 Output</h3>
+      <pre id="output">No data yet</pre>
+    </div>
+  </div>
 </body>
 </html>
