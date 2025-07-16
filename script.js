@@ -1,37 +1,49 @@
-function preview() {
-  const areas = document.querySelectorAll("textarea");
-  let html = "", css = "", js = "";
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from './config.js';
 
-  areas.forEach((area, i) => {
-    const code = area.value;
-    if (i % 3 === 0) html += code + "\n";
-    else if (i % 3 === 1) css += code + "\n";
-    else js += code + "\n";
-  });
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-  const output = `
-    <!DOCTYPE html>
-    <html>
-    <head><style>${css}</style></head>
-    <body>${html}<script>${js}<\/script></body>
-    </html>
-  `;
-  document.getElementById("livePreview").srcdoc = output;
-}
+window.signUp = async function () {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const { error } = await supabase.auth.signUp({ email, password });
+  if (error) alert("❌ Signup failed: " + error.message);
+  else alert("✅ Signup success! Please login.");
+};
 
-function resetForm() {
-  document.querySelectorAll("textarea").forEach(area => area.value = "");
-  document.getElementById("projectName").value = "";
-  document.getElementById("livePreview").srcdoc = "";
-}
+window.login = async function () {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) return alert("❌ Login failed: " + error.message);
+  document.getElementById("auth").style.display = "none";
+  document.getElementById("ai-prompt").style.display = "block";
+  document.getElementById("project-section").style.display = "block";
+};
 
-function submitApp() {
-  alert("✅ App created (preview only).");
-}
+window.save = async function () {
+  const session = await supabase.auth.getSession();
+  const userId = session.data.session.user.id;
+  const title = document.getElementById("title").value;
+  const code = document.getElementById("bundle").value;
 
-function shareApp() {
-  const name = document.getElementById("projectName").value || "My AutoCodeX App";
-  const link = "https://autocodex-user.vercel.app";
-  const full = encodeURIComponent(`🚀 Check out my app: ${name}\n${link}`);
-  window.open(`https://wa.me/?text=${full}`, "_blank");
-}
+  const { error } = await supabase.from("projects").insert([
+    { user_id: userId, title: title, code_bundle_json: code }
+  ]);
+  if (error) return alert("❌ Save failed: " + error.message);
+  alert("✅ Project saved!");
+};
+
+window.load = async function () {
+  const session = await supabase.auth.getSession();
+  const userId = session.data.session.user.id;
+  const { data, error } = await supabase.from("projects").select("*").eq("user_id", userId);
+  if (error) return alert("❌ Load failed: " + error.message);
+  document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+};
+
+// Placeholder for future ChatGPT integration
+window.generateCode = function () {
+  const prompt = document.getElementById("prompt").value;
+  alert("🤖 This will contact ChatGPT API to generate 18-bundle code based on:\n" + prompt);
+};
