@@ -1,3 +1,23 @@
+AutoCodeX - Prompt to App Version
+
+This is the frontend project of *AutoCodeX* – a full AI-powered app builder.
+
+## Features:
+- 🔐 User Signup/Login with Supabase
+- 🧠 Prompt to App (ChatGPT API integration ready)
+- 💾 Save and Load Projects to database
+- ✨ Clean, modern, responsive UI (light blue)
+
+## Setup:
+1. Add your Supabase project URL and API key to config.js
+2. Upload all files to GitHub
+3. Deploy using Vercel (No framework option)
+
+> Future plan: Add secure ChatGPT backend to auto-generate 18 code bundles.
+
+---
+
+🔗 Made with ❤️ by AutoCodeX | Powered by OpenAI & Supabase
 # autocodex-v1
 AI-powered app builder for non-coders – Create apps using 18 code bundles with live preview, logic fixer, and Play Store-ready export.
 AutoCodeX – AI-Powered No-Code App Builder
