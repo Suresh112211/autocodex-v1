@@ -16,6 +16,8 @@ window.login = async function () {
   const password = document.getElementById("password").value;
   const { data, error } = await supabase.auth.signInWithPassword({ email, password });
   if (error) return alert("❌ Login failed: " + error.message);
+
+  // ✅ यह UI activate करता है
   document.getElementById("auth").style.display = "none";
   document.getElementById("ai-prompt").style.display = "block";
   document.getElementById("project-section").style.display = "block";
@@ -42,8 +44,7 @@ window.load = async function () {
   document.getElementById("output").textContent = JSON.stringify(data, null, 2);
 };
 
-// Placeholder for future ChatGPT integration
 window.generateCode = function () {
   const prompt = document.getElementById("prompt").value;
-  alert("🤖 This will contact ChatGPT API to generate 18-bundle code based on:\n" + prompt);
+  alert("🤖 This will contact ChatGPT API to generate code from prompt:\n" + prompt);
 };
