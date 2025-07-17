@@ -2,47 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>AutoCodeX - Prompt to App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoCodeX</title>
   <link rel="stylesheet" href="style.css" />
-  <script type="module" src="script.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <h1>🚀 AutoCodeX - AI Powered App Builder</h1>
+  <header>
+    <img src="logo.png" alt="AutoCodeX Logo" class="logo" />
+    <h1>AutoCodeX - AI App Builder</h1>
+  </header>
 
-    <!-- Auth -->
-    <div id="auth">
-      <input id="email" type="email" placeholder="Email" />
-      <input id="password" type="password" placeholder="Password" />
-      <button onclick="signUp()">🔐 Sign Up</button>
-      <button onclick="login()">➡️ Login</button>
-    </div>
+  <main>
+    <section id="auth">
+      <h2>Login / Signup</h2>
+      <input type="text" placeholder="Mobile or Email" />
+      <button onclick="login()">Continue</button>
+    </section>
 
-    <!-- AI Prompt -->
-    <div id="ai-prompt" style="display:none;">
-      <h2>🧠 Prompt to App (ChatGPT)</h2>
-      <input id="prompt" type="text" placeholder="Describe your app idea..." />
-      <button onclick="generateCode()">⚡ Generate Code with AI</button>
-    </div>
+    <section id="prompt">
+      <h2>Enter Your App Prompt</h2>
+      <textarea placeholder="Describe your app idea here..."></textarea>
+      <button onclick="generateCode()">Generate Code</button>
+    </section>
 
-    <!-- Project -->
-    <div id="project-section" style="display:none;">
-      <h2>🧱 Build Your Project</h2>
-      <input id="title" type="text" placeholder="Project Title" />
-      <textarea id="bundle" placeholder="Paste your 18-bundle code (JSON)..."></textarea>
-      <button onclick="save()">💾 Save Project</button>
-      <button onclick="load()">📂 Load My Projects</button>
-      <h3>📊 Output</h3>
-      <pre id="output">No data yet</pre>
-    </div>
-  </div>
-  <body>
-  <!-- ...all your body content... -->
+    <section id="code-bundles">
+      <h2>Paste Your 18 Code Bundles</h2>
+      <textarea placeholder="1. HTML Code"></textarea>
+      <textarea placeholder="2. CSS / SCSS Code"></textarea>
+      <textarea placeholder="3. JS Code"></textarea>
+      <!-- Add more as needed -->
+      <button onclick="preview()">Live Preview</button>
+    </section>
 
-  <script>
-    // JS CODE YAHAN DAALIYE
-  </script>
-</body>
+    <section id="output">
+      <h2>Live Preview</h2>
+      <iframe id="preview-frame"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 AutoCodeX. Powered by AI. Lifetime Free.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
