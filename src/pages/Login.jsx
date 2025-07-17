@@ -1,19 +1,19 @@
-// src/pages/Login.jsx
 import React, { useState } from 'react';
-import { supabase } from '../supabaseClient'; // make sure this file exists
+import { useNavigate } from 'react-router-dom';
+import './Login.css';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-    if (error) {
-      alert(error.message);
+    if (email === 'admin@autocodex.com' && password === 'admin123') {
+      alert('Login Successful!');
+      navigate('/dashboard');
     } else {
-      alert("Login successful!");
-      window.location.href = "/dashboard";
+      alert('Invalid credentials');
     }
   };
 
@@ -21,8 +21,8 @@ const Login = () => {
     <div className="login-container">
       <h2>Login to AutoCodeX</h2>
       <form onSubmit={handleLogin}>
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
+        <input type="email" placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         <button type="submit">Login</button>
       </form>
     </div>
