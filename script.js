@@ -1,59 +1,33 @@
-// ------------------ LOGIN ----------------------
-document.querySelector(".login").addEventListener("click", () => {
-  const mobile = document.querySelector("input[type='text']").value;
-  const pass = document.querySelector("input[type='password']").value;
-  if (mobile && pass) {
-    alert(🔐 Logged in as: ${mobile});
-  } else {
-    alert("⚠️ Please enter mobile/email and password.");
-  }
-});
+function preview() {
+  const html = document.getElementById("html").value;
+  const css = <style>${document.getElementById("css").value}</style>;
+  const js = <script>${document.getElementById("js").value}<\/script>;
+  const output = document.getElementById("output");
 
-// ------------------ SUBMIT IDEA ----------------------
-document.querySelector(".submit").addEventListener("click", () => {
-  const idea = document.querySelector("textarea").value.trim();
-  if (idea) {
-    alert(🧠 Idea Submitted: ${idea});
-    document.querySelector(".submit").innerText = "✅ Submitted";
-  } else {
-    alert("💡 Please write your app idea first!");
-  }
-});
+  output.srcdoc = html + css + js;
+}
 
-// ------------------ PREVIEW OUTPUT ----------------------
-document.querySelector(".preview").addEventListener("click", () => {
-  const previewBox = document.getElementById("preview-box");
-  previewBox.innerHTML = `
-    <h3>🧪 AutoCodeX Preview</h3>
-    <p>This is where your generated app output will appear.</p>
-    <p>Based on your prompt, the platform will auto-fill 18 code bundles with logic and layout.</p>
-  `;
-});
+function resetFields() {
+  document.getElementById("html").value = "";
+  document.getElementById("css").value = "";
+  document.getElementById("js").value = "";
+  document.getElementById("output").srcdoc = "";
+}
 
-// ------------------ EXTRAS ----------------------
-const extras = document.querySelectorAll(".extras .btn");
+function download() {
+  const zip = new JSZip();
+  zip.file("index.html", document.getElementById("html").value);
+  zip.file("style.css", document.getElementById("css").value);
+  zip.file("script.js", document.getElementById("js").value);
 
-extras[0].addEventListener("click", () => {
-  alert("⬇️ Download started (Demo)");
-});
-
-extras[1].addEventListener("click", () => {
-  alert("📤 Share link copied (Demo)");
-});
-
-extras[2].addEventListener("click", () => {
-  alert("💬 Opening Chat Room... (Demo)");
-});
-
-extras[3].addEventListener("click", () => {
-  alert("🗨️ Chat Box will appear soon! (Demo)");
-});
-
-// ------------------ Bundle Highlighting ----------------------
-const bundles = document.querySelectorAll(".bundle");
-bundles.forEach((box, index) => {
-  box.addEventListener("click", () => {
-    box.style.backgroundColor = "#2ecc71";
-    box.innerHTML += "<br />✅ Loaded";
+  zip.generateAsync({ type: "blob" }).then((content) => {
+    saveAs(content, "AutoCodeX-App.zip");
   });
-});
+}
+
+function share() {
+  const link = window.location.href;
+  navigator.clipboard.writeText(link).then(() => {
+    alert("🔗 Link copied to clipboard!");
+  });
+}
