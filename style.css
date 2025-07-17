@@ -1,31 +1,93 @@
-function login() {
-  alert("🔐 Login/signup system is under development using Supabase backend.");
+.* {
+  box-sizing: border-box;
 }
 
-function generateCode() {
-  alert("💡 Use AI tools like ChatGPT or Gemini to generate your code and paste it below.");
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
 }
 
-function preview() {
-  const areas = document.querySelectorAll("textarea");
-  let html = areas[0]?.value || "";
-  let css = areas[1]?.value || "";
-  let js = areas[2]?.value || "";
+header {
+  text-align: center;
+  padding: 2rem;
+  background-color: #1abc9c;
+  color: #fff;
+}
 
-  const output = `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <style>${css}</style>
-    </head>
-    <body>
-      ${html}
-      <script>${js}<\/script>
-    </body>
-    </html>
-  `;
+.logo {
+  height: 70px;
+  margin-bottom: 10px;
+}
 
-  const blob = new Blob([output], { type: "text/html" });
-  const frame = document.getElementById("preview-frame");
-  frame.src = URL.createObjectURL(blob);
+main {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.code-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.bundle {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-family: monospace;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 18px;
+  color: #f1c40f;
+}
+
+.buttons {
+  text-align: center;
+  margin: 30px 0;
+}
+
+button {
+  padding: 12px 24px;
+  margin: 0 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #2ecc71;
+}
+
+iframe {
+  width: 100%;
+  height: 400px;
+  border: 2px solid #ddd;
+  background: white;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1abc9c;
+  margin-top: 40px;
 }
