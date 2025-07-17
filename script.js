@@ -1,67 +1,73 @@
-// 18 bundle names
-const bundles = [
-  "HTML", "JavaScript", "CSS", "XML", "JWT", "REGEX", "React", "Node.js",
-  "API", "Auth", "SQL", "SCSS", "JSON", "TypeScript", "Python",
-  "Flutter", "UI/UX", "Security"
-];
+// 🌐 Bundle Preview System
+function showBundle(bundleName) {
+  const preview = document.getElementById('preview');
+  let code = '';
 
-// To track selected bundles
-const selected = new Set();
+  switch (bundleName) {
+    case 'HTML':
+      code = '<!DOCTYPE html><html><head><title>Demo</title></head><body><h1>Hello World!</h1></body></html>';
+      break;
+    case 'CSS':
+      code = '<style>body { background-color: #222; color: #fff; }</style>';
+      break;
+    case 'JS':
+      code = '<script>alert("JS Active!")</script>';
+      break;
+    case 'XML':
+      code = '<note><to>You</to><from>AutoCodeX</from></note>';
+      break;
+    default:
+      code = '<p>No preview available for this bundle.</p>';
+  }
 
-// Load bundles into container
-const container = document.getElementById("bundleContainer");
+  preview.srcdoc = code;
+}
 
-bundles.forEach((name, i) => {
-  const btn = document.createElement("button");
-  btn.textContent = ${i + 1}. ${name};
-  btn.onclick = () => {
-    btn.classList.toggle("active");
-    if (selected.has(name)) {
-      selected.delete(name);
-    } else {
-      selected.add(name);
-    }
-  };
-  container.appendChild(btn);
-});
+// 📥 Download Web App
+function downloadWebApp() {
+  const html = <!DOCTYPE html><html><head><title>AutoCodeX App</title></head><body><h1>Your Web App</h1></body></html>;
+  const blob = new Blob([html], { type: 'text/html' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'AutoCodeXApp.html';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 
-// Submit Idea Function
-function submitIdea() {
-  const idea = document.getElementById("idea").value.trim();
-  if (!idea) {
-    alert("⚠️ Please enter your idea first.");
+// 🤖 AI Chat Response (Mock)
+function getAIResponse() {
+  const input = document.getElementById('aiInput').value.trim();
+  const output = document.getElementById('aiResponse');
+
+  if (!input) {
+    output.innerText = 'Please type a question.';
     return;
   }
-  alert("✅ Idea submitted successfully!\n\n🧠 " + idea);
+
+  // Simulated AI logic
+  let response = "🤖 AI says: ";
+
+  if (input.toLowerCase().includes("html")) response += "HTML is for structuring content.";
+  else if (input.toLowerCase().includes("css")) response += "CSS is used to style HTML pages.";
+  else if (input.toLowerCase().includes("js")) response += "JS adds interactivity to your website.";
+  else response += "I'm still learning. Try asking something else!";
+
+  output.innerText = response;
 }
 
-// Preview Function
-function previewCode() {
-  const idea = document.getElementById("idea").value.trim();
-  const preview = document.getElementById("previewArea");
-
-  preview.innerHTML = `<strong>Preview:</strong><br>
-    <b>Selected Bundles:</b> ${[...selected].join(", ") || "None"}<br>
-    <b>Idea:</b> ${idea || "Not submitted"}`;
+// 🧵 Chatroom Auto-Scroll
+function appendChatMessage(message) {
+  const chat = document.getElementById('chatbox');
+  const msg = document.createElement('div');
+  msg.textContent = message;
+  chat.appendChild(msg);
+  chat.scrollTop = chat.scrollHeight;
 }
 
-// Download Function
-function downloadZip(type = "full") {
-  alert(⬇️ Downloading ${type.toUpperCase()} ZIP... (Demo purpose only));
-}
-
-// Share Link Function
-function share() {
-  const dummyLink = "https://autocodex.app/demo";
-  navigator.clipboard.writeText(dummyLink)
-    .then(() => alert("🔗 Share link copied to clipboard!\n" + dummyLink))
-    .catch(() => alert("❌ Unable to copy share link."));
-}
-
-// Reset Form Function
-function resetForm() {
-  document.getElementById("idea").value = "";
-  selected.clear();
-  document.querySelectorAll(".code-bundles button").forEach(btn => btn.classList.remove("active"));
-  document.getElementById("previewArea").innerHTML = <strong>Preview:</strong><br>Your selection will be shown here.;
-}
+// 📡 Simulate New Messages
+setInterval(() => {
+  const fakeMsgs = ["Welcome to AutoCodeX chat!", "Need help? Ask below.", "🔥 New feature update available!"];
+  const msg = fakeMsgs[Math.floor(Math.random() * fakeMsgs.length)];
+  appendChatMessage(msg);
+}, 7000);
