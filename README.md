@@ -1,119 +1,80 @@
-# AutoCodeX - VIP 🌟
+# 🚀 AutoCodeX - VIP
 
-AutoCodeX is a revolutionary *AI-powered, zero-code app builder platform* designed for non-programmers to generate full mobile and web apps using auto-generated code bundles via ChatGPT, Gemini, or other AI tools.
-
-> 🚀 Build apps. No coding. Full automation. Lifetime free tools only.
+AutoCodeX VIP is an AI-powered smart app idea-to-code converter platform where users can submit an idea and get 18 auto-generated code bundles including HTML, CSS, JavaScript, Node.js, React, Python, Flutter, and more. It includes live preview, download options, sharing system, and responsive design for all devices.
 
 ---
 
 ## 🔥 Features
 
-- ✅ *User Signup & Login* with mobile/email + password
-- ✅ *Prompt Submission* to describe your app idea
-- ✅ *Auto Generated 18 Code Bundles* from AI (HTML, CSS, JS, etc.)
-- ✅ *VIP Interface* with colorful, modern UI
-- ✅ *Live Preview Button* to test UI instantly
-- ✅ *Download, Share, Chatroom, Chatbox* ready buttons
-- ✅ *Script + Style + Preview Engine*
-- ✅ *Responsive Design*
-- ✅ *Modular & GitHub ready code structure*
+- 🔐 *Login / Signup* with mobile/email
+- 🧠 *Submit Your Idea*
+- 🧩 *18 Auto-generated Code Bundles*
+- 🎨 *Responsive UI & Clean Design*
+- 👁 *Live Preview of Selected Bundles*
+- ⬇️ *Download Project as ZIP* (Full, Web App, Android)
+- 🔗 *One-Click Share Link*
+- ♻️ *Reset All Options*
+- 💬 *Chat Room / Chat Box (Coming Soon)*
 
 ---
 
-## 🎯 Use Case
+## 📁 Folder Structure
+---
 
-*AutoCodeX empowers users to:*
+## 🧱 18 Code Bundles Included
 
-- Submit an app idea
-- Get AI-generated code via 18 input boxes
-- Preview output instantly
-- Export ZIP / PWA / APK format
-- Launch to Play Store
+1. HTML  
+2. JavaScript  
+3. CSS  
+4. XML  
+5. JWT  
+6. REGEX  
+7. React  
+8. Node.js  
+9. API  
+10. Auth  
+11. SQL  
+12. SCSS  
+13. JSON  
+14. TypeScript  
+15. Python  
+16. Flutter  
+17. UI/UX  
+18. Security  
 
 ---
 
-## 📁 File Structure
----
+## 📷 Screenshots
 
-## 🧠 How It Works
-
-1. *Login / Sign Up*  
-   → Secure login via email or mobile with password
-
-2. *Submit App Idea*  
-   → Enter your app idea in the text box and click submit
-
-3. *Paste 18 Code Bundles*  
-   → Use AI tools like ChatGPT or Gemini to generate and paste:
-   - HTML
-   - CSS
-   - JavaScript
-   - XML
-   - API Data
-   - Backend logic
-   - Regex
-   - JWT
-   - And more...
-
-4. *Click Live Preview*  
-   → Instantly see the output using combined code
-
-5. *Export or Share*  
-   → Download ZIP, share, deploy to Vercel/Firebase, or upload to Play Store
+> Add UI screenshots here after deployment.
 
 ---
 
-## 🧩 Tech Stack
+## ✅ How to Use
 
-- ✅ HTML5 / CSS3 / JS (Vanilla)
-- ✅ No Frameworks (lightweight)
-- ✅ Free Tools (lifetime use)
-- ✅ GitHub & Vercel supported
-- ✅ Optional: Firebase (free tier), Netlify
-
----
-
-## 🛡️ Security Features
-
-- AI logic validation
-- JS sandbox preview
-- Code injection protection
-- User verification layer (OTP-ready)
+1. Clone this repo or download the ZIP  
+2. Open index.html in any browser  
+3. Submit your idea  
+4. Select any number of code bundles  
+5. Click *Preview, **Download, or **Share*  
+6. Use *Reset* to start fresh
 
 ---
 
-## 📸 Screenshots
+## 🌐 Live Demo
 
-> Add screenshots in /screenshots/ folder for GitHub readme display.
-
----
-
-## 🔗 Live Demo (Optional)
-
-> Coming Soon on [Vercel](https://vercel.com)
+Coming Soon (Vercel / Netlify)
 
 ---
 
-## 📦 Future Integration Plans
+## 📞 Contact / Support
 
-- [ ] ChatGPT Integration via API
-- [ ] One-click ZIP to APK Converter
-- [ ] Razorpay/PayPal Monetization
-- [ ] Referral + Revenue Sharing System (10%)
-
----
-
-## 🧠 Developer Info
-
-*Founder:* Suresh Prajapati  
-*Platform Name:* AutoCodeX  
-*Version:* v1.0  
-*Email:* adanisuresh@gmail.com  
-*GitHub:* [Suresh112211](https://github.com/Suresh112211)
+Founder: *Suresh Prajapati*  
+Email: adanisuresh@gmail.com  
+Website: [Coming Soon]
 
 ---
 
-## 🙏 License
+## 🛡 License
 
-This project is open source under the *MIT License*.  
-Use it freely for educational and personal use.
+This project is under *MIT License* — free for personal and commercial use.
