@@ -3,45 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AutoCodeX</title>
+  <title>AutoCodeX - AI App Builder</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <img src="logo.png" alt="AutoCodeX Logo" class="logo" />
-    <h1>AutoCodeX - AI App Builder</h1>
+    <h1>🚀 AutoCodeX</h1>
+    <p class="tagline">Build apps without coding, powered by AI 💡</p>
   </header>
 
   <main>
-    <section id="auth">
-      <h2>Login / Signup</h2>
-      <input type="text" placeholder="Mobile or Email" />
+    <section class="card" id="auth">
+      <h2>🔐 Login / Signup</h2>
+      <input type="text" placeholder="📱 Mobile or 📧 Email" />
       <button onclick="login()">Continue</button>
     </section>
 
-    <section id="prompt">
-      <h2>Enter Your App Prompt</h2>
-      <textarea placeholder="Describe your app idea here..."></textarea>
-      <button onclick="generateCode()">Generate Code</button>
+    <section class="card" id="prompt">
+      <h2>💬 Describe Your App Idea</h2>
+      <textarea placeholder="Type your app idea (e.g. To-do App, Ecommerce Store...)"></textarea>
+      <button onclick="generateCode()">Generate AI Code</button>
     </section>
 
-    <section id="code-bundles">
-      <h2>Paste Your 18 Code Bundles</h2>
-      <textarea placeholder="1. HTML Code"></textarea>
-      <textarea placeholder="2. CSS / SCSS Code"></textarea>
-      <textarea placeholder="3. JS Code"></textarea>
-      <!-- Add more as needed -->
-      <button onclick="preview()">Live Preview</button>
+    <section class="card" id="code-bundles">
+      <h2>🧩 Paste Your 18 Code Bundles</h2>
+      <textarea placeholder="1️⃣ HTML Code"></textarea>
+      <textarea placeholder="2️⃣ CSS Code"></textarea>
+      <textarea placeholder="3️⃣ JavaScript Code"></textarea>
+      <button onclick="preview()">▶ Live Preview</button>
     </section>
 
-    <section id="output">
-      <h2>Live Preview</h2>
+    <section class="card" id="output">
+      <h2>👀 App Preview</h2>
       <iframe id="preview-frame"></iframe>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 AutoCodeX. Powered by AI. Lifetime Free.</p>
+    <p>© 2025 AutoCodeX | Made with ❤️ and AI | Lifetime Free Tools</p>
   </footer>
 
   <script src="script.js"></script>
