@@ -3,71 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AutoCodeX - Final UI</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>AutoCodeX VIP</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
-    <h1>AutoCodeX Platform</h1>
-    <p>AI-powered App Builder with 18 Code Bundles</p>
+    <div class="logo">AutoCodeX - VIP</div>
+    <div class="auth-box">
+      <input type="text" placeholder="Mobile / Email" id="user" />
+      <input type="password" placeholder="Password" id="pass" />
+      <button id="loginBtn">Login</button>
+      <button id="signupBtn">Sign Up</button>
+      <a href="#" id="forgot">Forgot Password?</a>
+    </div>
   </header>
 
   <main>
-    <section class="bundle-section">
-      <h2>🧩 18 Code Bundles (Auto Generated)</h2>
-      <div class="bundles">
-        <div class="bundle">1. HTML</div>
-        <div class="bundle">2. CSS / SCSS</div>
-        <div class="bundle">3. XML</div>
-        <div class="bundle">4. JavaScript</div>
-        <div class="bundle">5. TypeScript</div>
-        <div class="bundle">6. PHP</div>
-        <div class="bundle">7. Python</div>
-        <div class="bundle">8. Java</div>
-        <div class="bundle">9. Kotlin</div>
-        <div class="bundle">10. Swift</div>
-        <div class="bundle">11. SQL</div>
-        <div class="bundle">12. Markdown</div>
-        <div class="bundle">13. Regex</div>
-        <div class="bundle">14. JWT</div>
-        <div class="bundle">15. JSON</div>
-        <div class="bundle">16. YAML</div>
-        <div class="bundle">17. Dockerfile</div>
-        <div class="bundle">18. Shell Script</div>
+    <section class="idea-submit">
+      <textarea placeholder="Submit your idea here..."></textarea>
+      <button id="submitIdeaBtn">Submit</button>
+    </section>
+
+    <section class="code-bundles">
+      <h2>Auto-generated 18 Code Bundles</h2>
+      <div class="bundle-grid">
+        <div class="bundle" data-id="1">HTML</div>
+        <div class="bundle" data-id="2">JavaScript</div>
+        <div class="bundle" data-id="3">CSS</div>
+        <div class="bundle" data-id="4">XML</div>
+        <div class="bundle" data-id="5">React</div>
+        <div class="bundle" data-id="6">Node.js</div>
+        <div class="bundle" data-id="7">Express.js</div>
+        <div class="bundle" data-id="8">MongoDB</div>
+        <div class="bundle" data-id="9">SQL</div>
+        <div class="bundle" data-id="10">JWT</div>
+        <div class="bundle" data-id="11">Regex</div>
+        <div class="bundle" data-id="12">Tailwind</div>
+        <div class="bundle" data-id="13">Bootstrap</div>
+        <div class="bundle" data-id="14">Python</div>
+        <div class="bundle" data-id="15">Flask</div>
+        <div class="bundle" data-id="16">API</div>
+        <div class="bundle" data-id="17">PWA</div>
+        <div class="bundle" data-id="18">APK</div>
       </div>
     </section>
 
-    <section class="controls">
-      <button onclick="generatePreview()">Live Preview</button>
-      <button onclick="resetCode()">Reset</button>
-      <button onclick="downloadZip()">Download Web ZIP</button>
-      <button onclick="downloadAndroidZip()">Download Android ZIP</button>
-      <button onclick="shareApp()">Share</button>
-      <button onclick="downloadWebApp()">Download Your Web App</button>
+    <section class="action-buttons">
+      <button id="previewBtn">Live Preview</button>
+      <button id="resetBtn">Reset</button>
+      <button id="downloadZipBtn">Download WebZip</button>
+      <button id="downloadAppBtn">Download App</button>
+      <button id="shareBtn">Share</button>
     </section>
 
-    <section class="preview-area">
-      <h2>🔍 Live Preview</h2>
-      <iframe id="preview" srcdoc="<p>Click Live Preview</p>"></iframe>
+    <section class="extras">
+      <button id="buyPlanBtn">Buy Plan</button>
+      <button id="joinChatRoom">Join Chat Room</button>
+      <button id="askAiHelp">Ask AI for Help</button>
     </section>
 
-    <section class="chatroom">
-      <h2>👥 Community Chatroom</h2>
-      <div class="chatbox" id="chatroomBox">
-        <p>Welcome to AutoCodeX chatroom.</p>
-      </div>
-    </section>
+    <div class="output-preview">
+      <h3>Preview</h3>
+      <iframe id="livePreview"></iframe>
+    </div>
 
-    <section class="ai-chat">
-      <h2>🤖 Ask AI for Help</h2>
-      <input type="text" id="aiInput" placeholder="Ask something..." />
-      <button onclick="askAI()">Send</button>
-      <div id="aiResponse"></div>
-    </section>
   </main>
 
   <footer>
-    <p>© 2025 AutoCodeX. All rights reserved.</p>
+    <p>&copy; 2025 AutoCodeX VIP. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
