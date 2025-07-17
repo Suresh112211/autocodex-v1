@@ -1,20 +1,22 @@
-# AutoCodeX - Prompt to App (Frontend Only)
+# AutoCodeX - AI App Builder (Frontend)
 
-This is the frontend structure for the AutoCodeX platform.
+AutoCodeX is a free, AI-powered no-code platform that helps anyone build web apps by copying and pasting AI-generated code bundles (HTML, CSS, JS, etc.).
 
-## Features:
-- Sign Up & Login (placeholder only)
-- AI Prompt section
-- Project build + 18-code-bundle paste
-- UI ready for backend/Supabase integration
+### 🌟 Features
+- AI prompt + 18 bundle structure
+- Copy & paste AI code easily
+- Live Preview panel
+- Ready for Play Store export (APK, PWA, ZIP)
+- VIP design look with color-coded panels
+- Completely frontend-based using lifetime free tools
+- Built for GitHub + Vercel
 
-## Deploy Instructions:
-1. Upload all files to GitHub repo
-2. Deploy using Vercel (no framework)
-3. Output directory: `.`
-4. No build command needed
+### 🚀 Tech Stack
+- HTML, CSS, JavaScript
+- No frameworks required
+- Backend (next phase): Supabase
 
-## Future:
-- Supabase auth integration
-- ChatGPT + 18-bundle auto fill
-- [README (1).md](https://github.com/user-attachments/files/21280763/README.1.md)
+### 🧭 How to Run
+1. Clone or upload to GitHub
+2. Deploy on [Vercel](https://vercel.com) with default settings
+3. Enjoy your working frontend!
