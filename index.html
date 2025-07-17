@@ -1,79 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AutoCodeX VIP</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }body {
+  background: linear-gradient(to bottom right, #6a11cb, #2575fc);
+  color: white;
+  padding: 20px;
+}
 
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.5em;
+}
+
+.auth-section,
+.idea-section,
+.bundles,
+.controls,
+.preview,
+.footer {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #00c6ff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.bundles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  text-align: center;
+}
+
+.bundle-item {
+  background-color: #ffffff22;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.preview-box {
+  min-height: 150px;
+  background: #00000033;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer p {
+  margin: 10px 0;
+}
+
+  </style>
+</head><body>
   <header>
-    <div class="logo">AutoCodeX - VIP</div>
-    <div class="auth-box">
-      <input type="text" placeholder="Mobile / Email" id="user" />
-      <input type="password" placeholder="Password" id="pass" />
-      <button id="loginBtn">Login</button>
-      <button id="signupBtn">Sign Up</button>
-      <a href="#" id="forgot">Forgot Password?</a>
+    <h1>AutoCodeX - VIP</h1>
+  </header>  <section class="auth-section">
+    <input type="text" placeholder="Mobile / Email">
+    <input type="password" placeholder="Password">
+    <button>Sign In</button>
+    <button>Sign Up</button>
+    <button>Forgot Password</button>
+  </section>  <section class="idea-section">
+    <textarea rows="3" placeholder="Submit your idea..."></textarea>
+    <button>Submit</button>
+  </section>  <section class="bundles">
+    <h2>Auto Generated 18 Code Bundles</h2>
+    <div class="bundles-grid">
+      <div class="bundle-item">1. HTML</div>
+      <div class="bundle-item">2. JS</div>
+      <div class="bundle-item">3. CSS</div>
+      <div class="bundle-item">4. XML</div>
+      <div class="bundle-item">5. JSON</div>
+      <div class="bundle-item">6. SQL</div>
+      <div class="bundle-item">7. REGEX</div>
+      <div class="bundle-item">8. JWT</div>
+      <div class="bundle-item">9. Python</div>
+      <div class="bundle-item">10. React</div>
+      <div class="bundle-item">11. Node.js</div>
+      <div class="bundle-item">12. API</div>
+      <div class="bundle-item">13. PHP</div>
+      <div class="bundle-item">14. Java</div>
+      <div class="bundle-item">15. Swift</div>
+      <div class="bundle-item">16. Kotlin</div>
+      <div class="bundle-item">17. Flutter</div>
+      <div class="bundle-item">18. Dart</div>
     </div>
-  </header>
-
-  <main>
-    <section class="idea-submit">
-      <textarea placeholder="Submit your idea here..."></textarea>
-      <button id="submitIdeaBtn">Submit</button>
-    </section>
-
-    <section class="code-bundles">
-      <h2>Auto-generated 18 Code Bundles</h2>
-      <div class="bundle-grid">
-        <div class="bundle" data-id="1">HTML</div>
-        <div class="bundle" data-id="2">JavaScript</div>
-        <div class="bundle" data-id="3">CSS</div>
-        <div class="bundle" data-id="4">XML</div>
-        <div class="bundle" data-id="5">React</div>
-        <div class="bundle" data-id="6">Node.js</div>
-        <div class="bundle" data-id="7">Express.js</div>
-        <div class="bundle" data-id="8">MongoDB</div>
-        <div class="bundle" data-id="9">SQL</div>
-        <div class="bundle" data-id="10">JWT</div>
-        <div class="bundle" data-id="11">Regex</div>
-        <div class="bundle" data-id="12">Tailwind</div>
-        <div class="bundle" data-id="13">Bootstrap</div>
-        <div class="bundle" data-id="14">Python</div>
-        <div class="bundle" data-id="15">Flask</div>
-        <div class="bundle" data-id="16">API</div>
-        <div class="bundle" data-id="17">PWA</div>
-        <div class="bundle" data-id="18">APK</div>
-      </div>
-    </section>
-
-    <section class="action-buttons">
-      <button id="previewBtn">Live Preview</button>
-      <button id="resetBtn">Reset</button>
-      <button id="downloadZipBtn">Download WebZip</button>
-      <button id="downloadAppBtn">Download App</button>
-      <button id="shareBtn">Share</button>
-    </section>
-
-    <section class="extras">
-      <button id="buyPlanBtn">Buy Plan</button>
-      <button id="joinChatRoom">Join Chat Room</button>
-      <button id="askAiHelp">Ask AI for Help</button>
-    </section>
-
-    <div class="output-preview">
-      <h3>Preview</h3>
-      <iframe id="livePreview"></iframe>
+  </section>  <section class="controls">
+    <button>Live Preview</button>
+    <button>Reset</button>
+    <button>Download Web ZIP</button>
+    <button>Download Your App</button>
+    <button>Share</button>
+    <button>Join Chat Room</button>
+    <button>Ask AI for Help</button>
+    <button>Buy Plan</button>
+  </section>  <section class="preview">
+    <h3>Live Preview</h3>
+    <div class="preview-box">
+      <!-- Live Preview Output Here -->
     </div>
-
-  </main>
-
-  <footer>
-    <p>&copy; 2025 AutoCodeX VIP. All rights reserved.</p>
+  </section>  <footer class="footer">
+    <p>All systems auto-managed with 100% free tools.</p>
+    <p>Designed for premium users - AutoCodeX VIP</p>
   </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+</body></html>
