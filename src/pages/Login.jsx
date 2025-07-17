@@ -1,32 +1,28 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Login.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const Login = () => {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+// Pages import
+import Login from "./pages/Login";
+// Aap yahan aur bhi pages add kar sakte ho jaise Signup, Home, etc.
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (email === 'admin@autocodex.com' && password === 'admin123') {
-      alert('Login Successful!');
-      navigate('/dashboard');
-    } else {
-      alert('Invalid credentials');
-    }
-  };
-
+const App = () => {
   return (
-    <div className="login-container">
-      <h2>Login to AutoCodeX</h2>
-      <form onSubmit={handleLogin}>
-        <input type="email" placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        <button type="submit">Login</button>
-      </form>
-    </div>
+    <Router>
+      <Routes>
+        {/* Login Page Route */}
+        <Route path="/login" element={<Login />} />
+
+        {/* Future routes ke liye example:
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/" element={<Home />} /> 
+        */}
+        
+        {/* Not Found Page (optional)
+        <Route path="*" element={<NotFound />} />
+        */}
+      </Routes>
+    </Router>
   );
 };
 
-export default Login;
+export default App;
