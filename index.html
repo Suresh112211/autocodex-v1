@@ -5,68 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AutoCodeX - VIP</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-
-  <!-- ===== HEADER & LOGO ===== -->
   <header class="header">
     <img src="logo.png" alt="AutoCodeX Logo" class="logo">
-    <h1>AutoCodeX - <span class="vip">VIP</span></h1>
+    <h1>AutoCodeX - VIP AI App Builder</h1>
+    <p class="tagline">Empowering Non-Coders to Build Powerful Apps</p>
   </header>
 
-  <!-- ===== LOGIN SECTION ===== -->
-  <section class="login-section">
-    <input type="text" placeholder="Mobile / Email" />
-    <input type="password" placeholder="Password" />
-    <button class="login">Sign in / Sign up</button>
-  </section>
+  <main class="main-container">
+    <section class="code-section">
+      <div class="code-block">
+        <label for="html">HTML Code:</label>
+        <textarea id="html" placeholder="Paste HTML here..."></textarea>
+      </div>
+      <div class="code-block">
+        <label for="css">CSS Code:</label>
+        <textarea id="css" placeholder="Paste CSS here..."></textarea>
+      </div>
+      <div class="code-block">
+        <label for="js">JavaScript Code:</label>
+        <textarea id="js" placeholder="Paste JavaScript here..."></textarea>
+      </div>
+    </section>
 
-  <!-- ===== IDEA SUBMIT ===== -->
-  <section class="idea-section">
-    <textarea placeholder="💡 Submit your app idea..."></textarea>
-    <button class="submit">Submit Idea</button>
-  </section>
+    <section class="buttons">
+      <button onclick="preview()">🔍 Live Preview</button>
+      <button onclick="download()">📥 Download ZIP</button>
+      <button onclick="share()">🔗 Share</button>
+      <button onclick="resetFields()">♻️ Reset</button>
+    </section>
 
-  <!-- ===== 18 CODE BUNDLES ===== -->
-  <section class="bundle-section">
-    <h2>🔧 Auto-generated 18 Code Bundles</h2>
-    <div class="bundle-grid">
-      <div class="bundle html">HTML<br>①</div>
-      <div class="bundle js">JS<br>②</div>
-      <div class="bundle css">CSS<br>③</div>
-      <div class="bundle">④</div>
-      <div class="bundle">⑤</div>
-      <div class="bundle">⑥</div>
-      <div class="bundle">⑦</div>
-      <div class="bundle">⑧</div>
-      <div class="bundle">⑨</div>
-      <div class="bundle">⑩</div>
-      <div class="bundle">⑪</div>
-      <div class="bundle">⑫</div>
-      <div class="bundle">⑬</div>
-      <div class="bundle">⑭</div>
-      <div class="bundle">⑮</div>
-      <div class="bundle">⑯</div>
-      <div class="bundle">⑰</div>
-      <div class="bundle">⑱</div>
-    </div>
-  </section>
+    <section class="preview-section">
+      <h2>🔎 App Live Preview:</h2>
+      <iframe id="output" class="iframe-preview"></iframe>
+    </section>
+  </main>
 
-  <!-- ===== PREVIEW BUTTON ===== -->
-  <section class="preview-section">
-    <button class="preview">Click to Preview</button>
-    <div id="preview-box" class="preview-box"></div>
-  </section>
-
-  <!-- ===== EXTRAS: Download / Share / Chat ===== -->
-  <section class="extras">
-    <button class="btn">Download</button>
-    <button class="btn">Share</button>
-    <button class="btn">Chat Room</button>
-    <button class="btn">Chat Box</button>
-  </section>
-
-  <!-- ===== JS Link ===== -->
-  <script src="script.js"></script>
+  <footer class="footer">
+    <p>&copy; 2025 AutoCodeX • Built with ❤️ using Free Tools</p>
+  </footer>
 </body>
 </html>
