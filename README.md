@@ -1,22 +1,22 @@
-# AutoCodeX - AI App Builder (Frontend)
+# AutoCodeX - VIP App Builder
 
-AutoCodeX is a free, AI-powered no-code platform that helps anyone build web apps by copying and pasting AI-generated code bundles (HTML, CSS, JS, etc.).
+AutoCodeX is an AI-powered no-code platform to help non-programmers build apps visually.
 
-### 🌟 Features
-- AI prompt + 18 bundle structure
-- Copy & paste AI code easily
-- Live Preview panel
-- Ready for Play Store export (APK, PWA, ZIP)
-- VIP design look with color-coded panels
-- Completely frontend-based using lifetime free tools
-- Built for GitHub + Vercel
+## Features
 
-### 🚀 Tech Stack
-- HTML, CSS, JavaScript
-- No frameworks required
-- Backend (next phase): Supabase
+- HTML, CSS, JS code input
+- Live preview
+- Stylish dark background
+- App-like UI with VIP layout
+- Buttons for future download/share
+- Responsive iframe preview
 
-### 🧭 How to Run
-1. Clone or upload to GitHub
-2. Deploy on [Vercel](https://vercel.com) with default settings
-3. Enjoy your working frontend!
+## Usage
+
+1. Paste your code in the three boxes.
+2. Click "Live Preview" to view output instantly.
+3. Export and share options coming soon!
+
+## Author
+
+Created for project: AutoCodeX (2025)
