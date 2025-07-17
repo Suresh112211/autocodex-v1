@@ -1,43 +1,31 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #eef2f7;
-  padding: 40px;
+function login() {
+  alert("Login system coming soon in backend (Supabase).");
 }
-.container {
-  max-width: 720px;
-  margin: auto;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  padding: 30px;
+
+function generateCode() {
+  alert("Generate with ChatGPT/Gemini and paste below.");
 }
-h1 {
-  text-align: center;
-  color: #007acc;
-}
-input, textarea, button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 12px;
-  margin-bottom: 12px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-button {
-  background-color: #007acc;
-  color: white;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #005fa3;
-}
-pre {
-  background: #f4f4f4;
-  padding: 10px;
-  font-size: 14px;
-  border-radius: 6px;
-  white-space: pre-wrap;
+
+function preview() {
+  const areas = document.querySelectorAll("textarea");
+  let html = areas[0]?.value || "";
+  let css = areas[1]?.value || "";
+  let js = areas[2]?.value || "";
+
+  const output = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <style>${css}</style>
+    </head>
+    <body>
+      ${html}
+      <script>${js}<\/script>
+    </body>
+    </html>
+  `;
+
+  const frame = document.getElementById("preview-frame");
+  const blob = new Blob([output], { type: "text/html" });
+  frame.src = URL.createObjectURL(blob);
 }
