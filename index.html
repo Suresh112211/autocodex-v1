@@ -1,47 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AutoCodeX - AI App Builder</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoCodeX - App Builder</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="AutoCodeX Logo" class="logo" />
-    <h1>🚀 AutoCodeX</h1>
-    <p class="tagline">Build apps without coding, powered by AI 💡</p>
+    <img src="logo.png" alt="AutoCodeX Logo" class="logo">
+    <h1>AutoCodeX</h1>
+    <p>Build Web Apps Without Code - VIP Version</p>
   </header>
 
   <main>
-    <section class="card" id="auth">
-      <h2>🔐 Login / Signup</h2>
-      <input type="text" placeholder="📱 Mobile or 📧 Email" />
-      <button onclick="login()">Continue</button>
+    <section class="code-section">
+      <div class="bundle">
+        <label>HTML Code</label>
+        <textarea id="htmlCode" placeholder="Enter HTML here..."></textarea>
+      </div>
+      <div class="bundle">
+        <label>CSS Code</label>
+        <textarea id="cssCode" placeholder="Enter CSS here..."></textarea>
+      </div>
+      <div class="bundle">
+        <label>JavaScript Code</label>
+        <textarea id="jsCode" placeholder="Enter JavaScript here..."></textarea>
+      </div>
     </section>
 
-    <section class="card" id="prompt">
-      <h2>💬 Describe Your App Idea</h2>
-      <textarea placeholder="Type your app idea (e.g. To-do App, Ecommerce Store...)"></textarea>
-      <button onclick="generateCode()">Generate AI Code</button>
-    </section>
+    <div class="buttons">
+      <button onclick="preview()">Live Preview</button>
+      <button onclick="download()">Download</button>
+      <button onclick="share()">Share</button>
+    </div>
 
-    <section class="card" id="code-bundles">
-      <h2>🧩 Paste Your 18 Code Bundles</h2>
-      <textarea placeholder="1️⃣ HTML Code"></textarea>
-      <textarea placeholder="2️⃣ CSS Code"></textarea>
-      <textarea placeholder="3️⃣ JavaScript Code"></textarea>
-      <button onclick="preview()">▶ Live Preview</button>
-    </section>
-
-    <section class="card" id="output">
-      <h2>👀 App Preview</h2>
-      <iframe id="preview-frame"></iframe>
-    </section>
+    <iframe id="outputFrame"></iframe>
   </main>
 
   <footer>
-    <p>© 2025 AutoCodeX | Made with ❤️ and AI | Lifetime Free Tools</p>
+    <p>&copy; 2025 AutoCodeX | Made for Creators</p>
   </footer>
 
   <script src="script.js"></script>
