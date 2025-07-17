@@ -1,9 +1,9 @@
 function login() {
-  alert("Login system coming soon in backend (Supabase).");
+  alert("🔐 Login/signup system is under development using Supabase backend.");
 }
 
 function generateCode() {
-  alert("Generate with ChatGPT/Gemini and paste below.");
+  alert("💡 Use AI tools like ChatGPT or Gemini to generate your code and paste it below.");
 }
 
 function preview() {
@@ -14,7 +14,7 @@ function preview() {
 
   const output = `
     <!DOCTYPE html>
-    <html>
+    <html lang="en">
     <head>
       <style>${css}</style>
     </head>
@@ -25,7 +25,7 @@ function preview() {
     </html>
   `;
 
-  const frame = document.getElementById("preview-frame");
   const blob = new Blob([output], { type: "text/html" });
+  const frame = document.getElementById("preview-frame");
   frame.src = URL.createObjectURL(blob);
 }
