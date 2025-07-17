@@ -3,177 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AutoCodeX - VIP</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #e0f7fa, #ffffff);
-      margin: 0; padding: 0;
-    }
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 20px;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    }
-    h1 {
-      text-align: center;
-      color: #007bff;
-    }
-    input, textarea, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-    button {
-      background: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    button:hover {
-      background: #0056b3;
-    }
-    .code-bundles {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    .code-bundles button {
-      flex: 1 0 30%;
-      background-color: #e3f2fd;
-      border: 2px solid #007bff;
-      color: #007bff;
-      font-weight: bold;
-      transition: all 0.3s;
-      text-align: center;
-    }
-    .code-bundles button.active {
-      background-color: #007bff;
-      color: white;
-    }
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    .actions button {
-      flex: 1 0 48%;
-      background-color: #28a745;
-    }
-    .preview-area {
-      margin-top: 20px;
-      padding: 15px;
-      background: #f1f8e9;
-      border: 2px dashed #cddc39;
-      border-radius: 10px;
-    }
-    .chat-options {
-      margin-top: 15px;
-      font-size: 14px;
-      color: #555;
-      text-align: center;
-    }
-    @media (max-width: 600px) {
-      .code-bundles button, .actions button {
-        flex: 1 0 100%;
-      }
-    }
-  </style>
+  <title>AutoCodeX - Final UI</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>AutoCodeX - VIP</h1>
+  <header>
+    <h1>AutoCodeX Platform</h1>
+    <p>AI-powered App Builder with 18 Code Bundles</p>
+  </header>
 
-    <input type="text" placeholder="Mobile / Email" id="email">
-    <input type="password" placeholder="Password" id="password">
-    <button onclick="alert('Login/Signup not active yet')">Sign In / Sign Up</button>
+  <main>
+    <section class="bundle-section">
+      <h2>🧩 18 Code Bundles (Auto Generated)</h2>
+      <div class="bundles">
+        <div class="bundle">1. HTML</div>
+        <div class="bundle">2. CSS / SCSS</div>
+        <div class="bundle">3. XML</div>
+        <div class="bundle">4. JavaScript</div>
+        <div class="bundle">5. TypeScript</div>
+        <div class="bundle">6. PHP</div>
+        <div class="bundle">7. Python</div>
+        <div class="bundle">8. Java</div>
+        <div class="bundle">9. Kotlin</div>
+        <div class="bundle">10. Swift</div>
+        <div class="bundle">11. SQL</div>
+        <div class="bundle">12. Markdown</div>
+        <div class="bundle">13. Regex</div>
+        <div class="bundle">14. JWT</div>
+        <div class="bundle">15. JSON</div>
+        <div class="bundle">16. YAML</div>
+        <div class="bundle">17. Dockerfile</div>
+        <div class="bundle">18. Shell Script</div>
+      </div>
+    </section>
 
-    <textarea id="idea" placeholder="Submit your idea here..."></textarea>
-    <button onclick="submitIdea()">Submit Idea</button>
+    <section class="controls">
+      <button onclick="generatePreview()">Live Preview</button>
+      <button onclick="resetCode()">Reset</button>
+      <button onclick="downloadZip()">Download Web ZIP</button>
+      <button onclick="downloadAndroidZip()">Download Android ZIP</button>
+      <button onclick="shareApp()">Share</button>
+      <button onclick="downloadWebApp()">Download Your Web App</button>
+    </section>
 
-    <h3>Auto-generated 18 Code Bundles</h3>
-    <div class="code-bundles" id="bundleContainer"></div>
+    <section class="preview-area">
+      <h2>🔍 Live Preview</h2>
+      <iframe id="preview" srcdoc="<p>Click Live Preview</p>"></iframe>
+    </section>
 
-    <div class="actions">
-      <button onclick="previewCode()">🔍 Preview</button>
-      <button onclick="downloadZip()">⬇️ Download Full ZIP</button>
-      <button onclick="downloadZip('web')">🌐 Web App ZIP</button>
-      <button onclick="downloadZip('android')">📱 Android ZIP</button>
-      <button onclick="share()">🔗 Share</button>
-      <button onclick="resetForm()">🔄 Reset</button>
-    </div>
+    <section class="chatroom">
+      <h2>👥 Community Chatroom</h2>
+      <div class="chatbox" id="chatroomBox">
+        <p>Welcome to AutoCodeX chatroom.</p>
+      </div>
+    </section>
 
-    <div class="preview-area" id="previewArea">
-      <strong>Preview:</strong> <br>Your selection will be shown here.
-    </div>
+    <section class="ai-chat">
+      <h2>🤖 Ask AI for Help</h2>
+      <input type="text" id="aiInput" placeholder="Ask something..." />
+      <button onclick="askAI()">Send</button>
+      <div id="aiResponse"></div>
+    </section>
+  </main>
 
-    <div class="chat-options">
-      💬 Chat Room / Chat Box (Coming soon...)
-    </div>
-  </div>
+  <footer>
+    <p>© 2025 AutoCodeX. All rights reserved.</p>
+  </footer>
 
-  <script>
-    const bundles = [
-      "HTML", "JavaScript", "CSS", "XML", "JWT", "REGEX", "React", "Node.js",
-      "API", "Auth", "SQL", "SCSS", "JSON", "TypeScript", "Python",
-      "Flutter", "UI/UX", "Security"
-    ];
-    const selected = new Set();
-    const container = document.getElementById("bundleContainer");
-
-    bundles.forEach((name, i) => {
-      const btn = document.createElement("button");
-      btn.textContent = ${i + 1}. ${name};
-      btn.onclick = () => {
-        btn.classList.toggle("active");
-        selected.has(name) ? selected.delete(name) : selected.add(name);
-      };
-      container.appendChild(btn);
-    });
-
-    function submitIdea() {
-      const idea = document.getElementById("idea").value.trim();
-      if (!idea) {
-        alert("Please enter your idea first.");
-        return;
-      }
-      alert("Idea submitted successfully!\n\n" + idea);
-    }
-
-    function previewCode() {
-      const idea = document.getElementById("idea").value.trim();
-      const preview = document.getElementById("previewArea");
-      preview.innerHTML = `<strong>Preview:</strong><br>
-        Selected Bundles: ${[...selected].join(", ") || "None"}<br>
-        Idea: ${idea || "Not submitted"}`;
-    }
-
-    function downloadZip(type = "full") {
-      alert(Downloading ${type.toUpperCase()} ZIP...);
-    }
-
-    function share() {
-      navigator.clipboard.writeText("https://autocodex.app/demo")
-        .then(() => alert("Share link copied to clipboard!"))
-        .catch(() => alert("Unable to copy share link."));
-    }
-
-    function resetForm() {
-      document.getElementById("idea").value = "";
-      selected.clear();
-      document.querySelectorAll(".code-bundles button").forEach(btn => btn.classList.remove("active"));
-      document.getElementById("previewArea").innerHTML = <strong>Preview:</strong><br>Your selection will be shown here.;
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
