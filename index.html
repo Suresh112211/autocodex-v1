@@ -2,49 +2,119 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AutoCodeX - VIP</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f2f2f2; }
+    .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);}
+    h1 { text-align: center; color: #333; }
+    input, textarea, button {
+      padding: 10px; margin: 10px 0; width: 100%; border: 1px solid #ccc; border-radius: 6px;
+    }
+    .code-bundles {
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .code-bundles button {
+      flex: 1 0 18%; padding: 15px; font-weight: bold; background: #e9f0ff;
+      border: 2px solid #007bff; color: #007bff; border-radius: 8px;
+      cursor: pointer; transition: 0.3s;
+    }
+    .code-bundles button.active { background: #007bff; color: white; }
+    .actions { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .actions button {
+      flex: 1; background: #28a745; color: white; font-weight: bold; border: none; border-radius: 6px; cursor: pointer;
+    }
+    .preview-area {
+      margin-top: 20px; padding: 15px; background: #f9f9f9; border: 1px dashed #ccc;
+    }
+    .chat-options {
+      margin-top: 15px; font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <img src="logo.png" alt="AutoCodeX Logo" class="logo">
-    <h1>AutoCodeX - VIP AI App Builder</h1>
-    <p class="tagline">Empowering Non-Coders to Build Powerful Apps</p>
-  </header>
+  <div class="container">
+    <h1>AutoCodeX - VIP</h1>
 
-  <main class="main-container">
-    <section class="code-section">
-      <div class="code-block">
-        <label for="html">HTML Code:</label>
-        <textarea id="html" placeholder="Paste HTML here..."></textarea>
-      </div>
-      <div class="code-block">
-        <label for="css">CSS Code:</label>
-        <textarea id="css" placeholder="Paste CSS here..."></textarea>
-      </div>
-      <div class="code-block">
-        <label for="js">JavaScript Code:</label>
-        <textarea id="js" placeholder="Paste JavaScript here..."></textarea>
-      </div>
-    </section>
+    <input type="text" placeholder="Mobile / Email" id="email">
+    <input type="password" placeholder="Password" id="password">
+    <button onclick="alert('Login/Signup feature coming soon!')">Sign In / Sign Up</button>
 
-    <section class="buttons">
-      <button onclick="preview()">🔍 Live Preview</button>
-      <button onclick="download()">📥 Download ZIP</button>
-      <button onclick="share()">🔗 Share</button>
-      <button onclick="resetFields()">♻️ Reset</button>
-    </section>
+    <textarea placeholder="Submit your idea..." id="idea"></textarea>
+    <button onclick="submitIdea()">Submit</button>
 
-    <section class="preview-section">
-      <h2>🔎 App Live Preview:</h2>
-      <iframe id="output" class="iframe-preview"></iframe>
-    </section>
-  </main>
+    <h3>Auto-generated 18 Code Bundles</h3>
+    <div class="code-bundles" id="bundles">
+      <!-- Buttons will be added dynamically -->
+    </div>
 
-  <footer class="footer">
-    <p>&copy; 2025 AutoCodeX • Built with ❤️ using Free Tools</p>
-  </footer>
+    <div class="actions">
+      <button onclick="previewCode()">Live Preview</button>
+      <button onclick="downloadZip()">Download ZIP</button>
+      <button onclick="downloadZip('web')">Web App ZIP</button>
+      <button onclick="downloadZip('android')">Android ZIP</button>
+      <button onclick="share()">Share</button>
+      <button onclick="resetForm()">Reset</button>
+    </div>
+
+    <div class="preview-area" id="previewArea">
+      <strong>Preview:</strong> <br>
+      Your code preview will appear here...
+    </div>
+
+    <div class="chat-options">
+      <p><strong>Chat Room / ChatBox:</strong> (Coming soon...)</p>
+    </div>
+  </div>
+
+  <script>
+    const bundleList = [
+      "HTML", "JS", "CSS", "XML", "JWT", "REGEX", "REACT", "NODE", 
+      "API", "AUTH", "SQL", "SCSS", "JSON", "TYPESCRIPT", "PYTHON", 
+      "FLUTTER", "UI/UX", "SECURITY"
+    ];
+
+    const bundlesContainer = document.getElementById("bundles");
+    const selectedBundles = new Set();
+
+    // Generate 18 active buttons
+    bundleList.forEach((name, index) => {
+      const btn = document.createElement("button");
+      btn.innerText = ${index + 1}. ${name};
+      btn.onclick = () => {
+        btn.classList.toggle("active");
+        selectedBundles.has(name) ? selectedBundles.delete(name) : selectedBundles.add(name);
+      };
+      bundlesContainer.appendChild(btn);
+    });
+
+    function submitIdea() {
+      const idea = document.getElementById("idea").value;
+      if (!idea.trim()) return alert("Please enter your idea.");
+      alert("Idea submitted: " + idea);
+    }
+
+    function previewCode() {
+      const preview = document.getElementById("previewArea");
+      preview.innerHTML = `<strong>Preview:</strong><br>
+        Selected Bundles: ${[...selectedBundles].join(", ") || "None"}<br>
+        Idea: ${document.getElementById("idea").value || "Not submitted"}`;
+    }
+
+    function downloadZip(type = "full") {
+      alert(Downloading ${type.toUpperCase()} ZIP... (dummy response));
+    }
+
+    function share() {
+      alert("Share link copied to clipboard! (dummy link)");
+    }
+
+    function resetForm() {
+      document.getElementById("idea").value = "";
+      document.querySelectorAll(".code-bundles button").forEach(btn => btn.classList.remove("active"));
+      selectedBundles.clear();
+      document.getElementById("previewArea").innerHTML = <strong>Preview:</strong> <br>Your code preview will appear here...;
+    }
+  </script>
 </body>
 </html>
